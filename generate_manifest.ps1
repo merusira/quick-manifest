@@ -13,7 +13,8 @@ try {
         $_.Name -notlike "*package-lock*" -and
         $_.Name -ne ".gitignore" -and
         $_.Extension -ne ".log" -and
-        $_.FullName.Replace("\","/") -notmatch "/\."
+        $_.FullName.Replace("\","/") -notmatch "/\." -and
+        $_.FullName.Replace("\","/") -notmatch "node_modules/electron"
     }
 
     # Create an ordered dictionary to store the file paths and hashes
